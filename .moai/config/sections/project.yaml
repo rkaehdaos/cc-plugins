@@ -1,20 +1,20 @@
-project:
-  name: claude-code-plugins
-  description: Claude Code plugins and marketplace
-  type: claude-code-plugin
-  locale: '{{LOCALE}}'
-  created_at: ''
-  initialized: false
-structure:
-  type: plugin-directory
-  directories:
-    skills: .claude/skills/
-    agents: .claude/agents/
-    commands: .claude/commands/
-    plugins: plugins/
-marketplace:
-  enabled: true
-  manifest: marketplace.json
-  version_pinning: true
 github:
-  profile_name: ''
+    profile_name: ""
+marketplace:
+    enabled: true
+    manifest: marketplace.json
+    version_pinning: true
+project:
+    created_at: ""
+    description: Claude Code plugins and marketplace
+    initialized: false
+    locale: '{{LOCALE}}'
+    name: claude-code-plugins
+    type: claude-code-plugin
+structure:
+    directories:
+        agents: .claude/agents/
+        commands: .claude/commands/
+        plugins: plugins/
+        skills: .claude/skills/
+    type: plugin-directory

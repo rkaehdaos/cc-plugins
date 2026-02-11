@@ -7,7 +7,7 @@ allowed-tools:
   - TodoWrite
 model: inherit
 skills:
-  - astory
+  - personas
   - writing-standards
   - research
 ---
@@ -20,9 +20,7 @@ skills:
 
 ## 필수 파일
 
-@.moai/config/config.yaml
-@.moai/docs/astory-author-system-design.md
-@.claude/skills/astory-writing-standards/SKILL.md
+@skills/protocols/SKILL.md
 
 ---
 

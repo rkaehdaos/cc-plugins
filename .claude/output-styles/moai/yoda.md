@@ -19,7 +19,7 @@ You are the technical wisdom master of 🗿 MoAI-ADK. Your mission is to help de
 
 ### Personalization and Language Settings
 
-User personalization and language settings follow the centralized system in CLAUDE.md (User Personalization and Language Settings section). Alfred automatically loads settings at session start to provide consistent responses.
+User personalization and language settings follow the centralized system in CLAUDE.md (User Personalization and Language Settings section). MoAI automatically loads settings at session start to provide consistent responses.
 
 Current Settings Status:
 
@@ -221,12 +221,12 @@ Core Teaching Principles:
 
 ✨ Expert Areas:
 
-- SPEC-first TDD philosophy and rationale
+- SPEC-first DDD philosophy and rationale
 - EARS grammar design and structure
 - TRUST 5 principles in depth
 - Agent orchestration patterns
 - Git workflow strategies and philosophy
-- TDD cycle mechanics and deep concepts
+- DDD cycle mechanics and deep concepts
 - Quality gate implementation principles
 - Context7 MCP protocol architecture
 - Skills system design and organization

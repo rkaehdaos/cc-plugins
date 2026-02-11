@@ -15,7 +15,7 @@ MoAI-ADK provides 6 core commands for SPEC-First DDD execution:
 | ------------------ | ---------------------- | ------------- |
 | `/moai:0-project`  | Project initialization | Setup         |
 | `/moai:1-plan`     | SPEC generation        | Planning      |
-| `/moai:2-run`      | TDD implementation     | Development   |
+| `/moai:2-run`      | DDD implementation     | Development   |
 | `/moai:3-sync`     | Documentation sync     | Documentation |
 | `/moai:9-feedback` | Feedback collection    | Improvement   |
 | `/moai:99-release` | Production deployment  | Release       |
@@ -65,7 +65,7 @@ Next Step: Ready for SPEC generation via `/moai:1-plan`
 Example:
 ```
 User: /moai:0-project
-Alfred: Project initialized successfully.
+MoAI: Project initialized successfully.
  - .moai/config/config.yaml created
  - Git workflow set to 'manual' mode
  Ready for SPEC generation.
@@ -109,7 +109,7 @@ CRITICAL: Execute `/clear` immediately after completion
 Example:
 ```
 User: /moai:1-plan "Implement user authentication endpoint (JWT)"
-Alfred: SPEC-001 generated successfully.
+MoAI: SPEC-001 generated successfully.
  Location: .moai/specs/SPEC-001/spec.md
 
  IMPORTANT: Execute /clear now to free 45-50K tokens.
@@ -117,11 +117,11 @@ Alfred: SPEC-001 generated successfully.
 
 ---
 
-### `/moai:2-run` - TDD Implementation
+### `/moai:2-run` - DDD Implementation
 
-Purpose: Execute RED-GREEN-REFACTOR cycle
+Purpose: Execute ANALYZE-PRESERVE-IMPROVE cycle
 
-Agent Delegation: `workflow-tdd`
+Agent Delegation: `workflow-ddd`
 
 Usage:
 ```bash
@@ -131,27 +131,29 @@ Usage:
 
 What It Does:
 1. Reads SPEC document
-2. Executes TDD cycle in 3 phases:
- - RED: Write failing tests
- - GREEN: Implement minimal code to pass tests
- - REFACTOR: Optimize and clean up code
+2. Executes DDD cycle in 3 phases:
+ - ANALYZE: Understand requirements and existing behavior
+ - PRESERVE: Ensure existing behavior is protected with tests
+ - IMPROVE: Implement improvements incrementally
 3. Validates TRUST 5 quality gates
 4. Generates implementation report
 
-TDD Process:
+DDD Process:
 ```
-Phase 1 (RED):
- - Write failing tests for each requirement
- - Run tests → ALL FAIL (expected)
+Phase 1 (ANALYZE):
+ - Understand requirements from SPEC
+ - Analyze existing codebase behavior
+ - Identify areas of change
 
-Phase 2 (GREEN):
- - Implement minimal code to pass tests
+Phase 2 (PRESERVE):
+ - Create characterization tests for existing behavior
+ - Ensure all tests pass before changes
  - Run tests → ALL PASS
 
-Phase 3 (REFACTOR):
+Phase 3 (IMPROVE):
+ - Implement changes incrementally
+ - Validate behavior preservation
  - Optimize code structure
- - Improve readability
- - Remove duplication
  - Run tests → ALL PASS (maintained)
 ```
 
@@ -165,11 +167,11 @@ Requirement: Test coverage ≥ 85% (TRUST 5)
 Example:
 ```
 User: /moai:2-run SPEC-001
-Alfred: TDD implementation cycle started for SPEC-001.
+MoAI: DDD implementation cycle started for SPEC-001.
 
- RED: 12 failing tests written
- GREEN: Implementation complete, all tests passing
- REFACTOR: Code optimized
+ ANALYZE: Requirements analyzed, 12 acceptance criteria identified
+ PRESERVE: Existing behavior protected, characterization tests created
+ IMPROVE: Implementation complete, all tests passing
 
  Test Coverage: 92% ( meets 85% threshold)
  TRUST 5: All gates passed
@@ -204,7 +206,7 @@ Output:
 Example:
 ```
 User: /moai:3-sync SPEC-001
-Alfred: Documentation synchronized for SPEC-001.
+MoAI: Documentation synchronized for SPEC-001.
 
  Generated:
  - API documentation: .moai/docs/SPEC-001/api.yaml
@@ -240,7 +242,7 @@ Use Cases:
 Example:
 ```
 User: /moai:9-feedback
-Alfred: Collecting feedback for recent session.
+MoAI: Collecting feedback for recent session.
 
  Errors: 2 permission issues detected
  Improvements: 1 token optimization suggestion
@@ -312,7 +314,7 @@ Each command delegates to a specific agent:
 | ------------------ | ------------------ | ----------------------- |
 | `/moai:0-project`  | `workflow-project` | Tier 1 (Always Active)  |
 | `/moai:1-plan`     | `workflow-spec`    | Tier 1 (Always Active)  |
-| `/moai:2-run`      | `workflow-tdd`     | Tier 1 (Always Active)  |
+| `/moai:2-run`      | `workflow-ddd`     | Tier 1 (Always Active)  |
 | `/moai:3-sync`     | `workflow-docs`    | Tier 1 (Always Active)  |
 | `/moai:9-feedback` | `core-quality`     | Tier 2 (Auto-triggered) |
 | `/moai:99-release` | `infra-devops`     | Tier 3 (Lazy-loaded)    |
@@ -321,7 +323,7 @@ Delegation Flow:
 ```
 User executes command
  ↓
-Alfred receives command
+MoAI receives command
  ↓
 Command processor agent invoked
  ↓
@@ -423,7 +425,7 @@ Other Modules:
 Agents:
 - [workflow-project](agents-reference.md#tier-1-command-processors) - `/moai:0-project`
 - [workflow-spec](agents-reference.md#tier-1-command-processors) - `/moai:1-plan`
-- [workflow-tdd](agents-reference.md#tier-1-command-processors) - `/moai:2-run`
+- [workflow-ddd](agents-reference.md#tier-1-command-processors) - `/moai:2-run`
 - [workflow-docs](agents-reference.md#tier-1-command-processors) - `/moai:3-sync`
 
 ---

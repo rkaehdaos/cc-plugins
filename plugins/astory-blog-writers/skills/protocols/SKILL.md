@@ -1,9 +1,10 @@
 ---
 name: protocols
 description: Solo(단일 페르소나), Crew(다중 페르소나), Adaptive(컨텍스트 전환) 모드를 위한 글쓰기 프로토콜. 섹션 매핑과 페르소나 조율 전략을 정의한다. 콘텐츠 생성 워크플로우를 결정하거나 다중 페르소나 콘텐츠를 조율할 때 사용한다.
-allowed-tools: Read, Grep, Glob
-version: 2.0.0
-status: active
+allowed-tools: Read Grep Glob
+metadata:
+  version: "2.0.0"
+  status: "active"
 ---
 
 # 글쓰기 프로토콜 (Writing Protocols)

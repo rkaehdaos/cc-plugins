@@ -3,24 +3,16 @@ name: builder-plugin
 description: |
   Plugin creation specialist. Use PROACTIVELY for Claude Code plugins, marketplace setup, and plugin validation.
   MUST INVOKE when ANY of these keywords appear in user request:
+  --ultrathink flag: Activate Sequential Thinking MCP for deep analysis of plugin architecture, marketplace structure, and plugin validation.
   EN: create plugin, plugin, plugin validation, plugin structure, marketplace, new plugin, marketplace creation, marketplace.json, plugin distribution
   KO: 플러그인생성, 플러그인, 플러그인검증, 플러그인구조, 마켓플레이스, 새플러그인, 마켓플레이스 생성, 플러그인 배포
   JA: プラグイン作成, プラグイン, プラグイン検証, プラグイン構造, マーケットプレイス, マーケットプレイス作成, プラグイン配布
   ZH: 创建插件, 插件, 插件验证, 插件结构, 市场, 市场创建, 插件分发
-tools: Read, Write, Edit, Grep, Glob, WebFetch, WebSearch, Bash, TodoWrite, Task, Skill, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
+tools: Read, Write, Edit, Grep, Glob, WebFetch, WebSearch, Bash, TodoWrite, Task, Skill, mcp__sequential-thinking__sequentialthinking, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
 model: inherit
 permissionMode: bypassPermissions
-skills: moai-foundation-claude, moai-workflow-project
-hooks:
-  PostToolUse:
-    - matcher: "Write|Edit"
-      hooks:
-        - type: command
-          command: "uv run \"{{PROJECT_DIR}}\"/.claude/hooks/moai/post_tool__code_formatter.py"
-          timeout: 30
-        - type: command
-          command: "uv run \"{{PROJECT_DIR}}\"/.claude/hooks/moai/post_tool__linter.py"
-          timeout: 30
+memory: user
+skills: moai-foundation-claude, moai-foundation-core, moai-workflow-project
 ---
 
 # Plugin Factory
@@ -42,7 +34,7 @@ parallel_safe: false
 
 coordination:
 spawns_subagents: false
-delegates_to: ["builder-command", "builder-agent", "builder-skill", "manager-quality"]
+delegates_to: ["builder-agent", "builder-skill", "manager-quality"]
 requires_approval: true
 
 performance:
@@ -58,7 +50,7 @@ Plugin Factory
 
 ## Essential Reference
 
-IMPORTANT: This agent follows Alfred's core execution directives defined in @CLAUDE.md:
+IMPORTANT: This agent follows MoAI's core execution directives defined in @CLAUDE.md:
 
 - Rule 1: 8-Step User Request Analysis Process
 - Rule 3: Behavioral Constraints (Never execute directly, always delegate)
@@ -126,7 +118,6 @@ Delegate TO this agent when:
 Delegate FROM this agent when:
 - Complex agent creation needed: delegate to builder-agent subagent
 - Complex skill creation needed: delegate to builder-skill subagent
-- Complex command creation needed: delegate to builder-command subagent
 - Quality validation required: delegate to manager-quality subagent
 
 Context to provide:
@@ -566,17 +557,15 @@ Next Steps:
 ## Works Well With
 
 Upstream Agents (Who Call builder-plugin):
-- Alfred - User requests new plugin creation
+- MoAI - User requests new plugin creation
 - manager-project - Project setup requiring plugin structure
 
 Peer Agents (Collaborate With):
-- builder-command - Create individual commands for plugins
 - builder-agent - Create individual agents for plugins
 - builder-skill - Create individual skills for plugins
 - manager-quality - Validate plugin quality
 
 Downstream Agents (builder-plugin calls):
-- builder-command - Command creation delegation
 - builder-agent - Agent creation delegation
 - builder-skill - Skill creation delegation
 - manager-quality - Standards validation

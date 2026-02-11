@@ -1,9 +1,10 @@
 ---
 name: research
 description: 블로그 콘텐츠를 위한 심층 웹 리서치 프로토콜. 웹 검색, 미디어 수집, 출처 검증, 인용 관리를 포함한다. 콘텐츠 작성 전 리서치가 필요하거나 출처 기반 콘텐츠를 생성할 때 사용한다.
-allowed-tools: Read, Grep, Glob, WebSearch, WebFetch
-version: 2.0.0
-status: active
+allowed-tools: Read Grep Glob WebSearch WebFetch
+metadata:
+  version: "2.0.0"
+  status: "active"
 ---
 
 # 리서치 프로토콜 (Research Protocol)

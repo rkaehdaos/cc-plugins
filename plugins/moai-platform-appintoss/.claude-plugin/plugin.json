@@ -4,11 +4,12 @@
   "description": "앱인토스(Apps in Toss) 미니앱 개발 전문가. WebView/React Native SDK, TDS(Toss Design System), Unity WebGL, Cocos Creator, 토스 로그인/결제, 푸시 알림, 광고 통합을 다룹니다. 토스 앱 내 미니앱 개발, Granite 프레임워크 사용, 토스페이 결제 연동, 게임 개발 시 사용하세요.",
   "author": {
     "name": "MODU AI",
+    "email": "email@mo.ai.kr",
     "url": "https://github.com/modu-ai"
   },
   "homepage": "https://developers-apps-in-toss.toss.im",
   "repository": "https://github.com/modu-ai/cc-plugins",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "keywords": [
     "appintoss",
     "앱인토스",

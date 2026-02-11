@@ -1,9 +1,10 @@
 ---
 name: personas
 description: aStory 블로그 플랫폼을 위한 8개의 AI 저자 페르소나. 아키텍트(격식체 분석적 권위), 개발자(실용적 대화체 구현자), 스토리텔러(서사적 공감적 여정 전달자), 멘토(체계적 양육적 교육자), 분석가(객관적 데이터 기반 연구자), 리뷰어(균형 잡힌 비교 평가자), 큐레이터(간결한 사실적 리포터), 칼럼니스트(비판적 도발적 논평가)를 포함한다. 저자 음성을 선택하거나 페르소나 기반 콘텐츠를 구현할 때 사용한다.
-allowed-tools: Read, Grep, Glob
-version: 2.0.0
-status: active
+allowed-tools: Read Grep Glob
+metadata:
+  version: "2.0.0"
+  status: "active"
 ---
 
 # AI 저자 페르소나 (AI Author Personas)

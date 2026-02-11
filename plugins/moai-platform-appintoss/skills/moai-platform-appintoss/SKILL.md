@@ -1,17 +1,22 @@
 ---
 name: moai-platform-appintoss
 description: "앱인토스(Apps in Toss) 미니앱 개발 전문가. WebView/React Native SDK, 토스 로그인/결제, 푸시 알림, 광고 통합을 다룹니다. 토스 앱 내 미니앱 개발, Granite 프레임워크 사용, 토스페이 결제 연동 시 사용하세요."
-version: 2.2.0
-category: platform
-modularized: true
 user-invocable: false
-tags: ["appintoss", "앱인토스", "toss", "토스", "miniapp", "미니앱", "granite", "webview", "react-native", "토스페이", "unity", "cocos", "game", "게임"]
-related-skills: moai-lang-typescript, moai-domain-frontend, moai-domain-backend, moai-domain-uiux
-updated: 2026-01-19
-status: active
-allowed-tools: Read, Write, Bash, Grep, Glob
+allowed-tools: Read Write Bash Grep Glob
+metadata:
+  version: "2.2.0"
+  category: "platform"
+  modularized: "true"
+  tags: "appintoss, 앱인토스, toss, 토스, miniapp, 미니앱, granite, webview, react-native, 토스페이, unity, cocos, game, 게임"
+  related-skills: "moai-lang-typescript, moai-domain-frontend, moai-domain-backend, moai-domain-uiux"
+  updated: "2026-01-19"
+  status: "active"
+
+# MoAI Extension: Triggers
 triggers:
   keywords: ["appintoss", "앱인토스", "toss", "토스", "미니앱", "miniapp", "granite", "webview", "react-native", "토스페이", "toss pay", "intoss", "unity webgl", "cocos creator", "토스게임"]
+
+# MoAI Extension: Modules
 modules:
   - modules/getting-started.md
   - modules/development.md

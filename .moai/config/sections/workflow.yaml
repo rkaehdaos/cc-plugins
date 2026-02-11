@@ -1,0 +1,40 @@
+completion_markers:
+    plan:
+        lsp_baseline_recorded: true
+        spec_document_created: true
+    run:
+        behavior_preserved: true
+        coverage_met_target: true
+        lsp_errors: 0
+        tests_passing: true
+        type_errors: 0
+    sync:
+        documentation_generated: true
+        lsp_clean: true
+        quality_gate_passed: true
+execution_mode:
+    autonomous:
+        completion_marker_based: true
+        continuous_loop: true
+        lsp_feedback_integration: true
+        show_progress: true
+        user_approval_required: false
+    interactive:
+        each_step_explicit: true
+        show_progress: true
+        user_approval_required: true
+loop_prevention:
+    max_iterations: 100
+    no_progress_threshold: 5
+    stale_detection:
+        - error_count_unchanged
+        - same_fix_attempted_twice
+        - alternative_strategy_required
+workflow:
+    auto_clear: true
+    execution_mode: auto
+    plan_tokens: 30000
+    run_tokens: 180000
+    sync_tokens: 40000
+    team:
+        enabled: false

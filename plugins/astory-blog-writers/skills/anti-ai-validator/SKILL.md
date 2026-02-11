@@ -1,9 +1,10 @@
 ---
 name: anti-ai-validator
 description: AI 탐지 가능 패턴을 감지하고 제거하는 독립 검증 스킬. 금지 표현, 반복 단어, 부자연스러운 구조를 탐지한다. 게시 전 콘텐츠를 검증하거나 AI 패턴을 자동 교정할 때 사용한다.
-allowed-tools: Read, Grep, Glob
-version: 2.0.0
-status: active
+allowed-tools: Read Grep Glob
+metadata:
+  version: "2.0.0"
+  status: "active"
 ---
 
 # AI 방지 검증기 (Anti-AI Validator)

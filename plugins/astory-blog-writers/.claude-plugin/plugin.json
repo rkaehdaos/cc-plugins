@@ -8,8 +8,8 @@
     "url": "https://github.com/modu-ai"
   },
   "homepage": "https://github.com/modu-ai/cc-plugins/tree/main/plugins/astory-blog-writers",
-  "repository": "https://github.com/modu-ai/cc-plugins.git",
-  "license": "COPYLEFT",
+  "repository": "https://github.com/modu-ai/cc-plugins",
+  "license": "MIT",
   "keywords": [
     "blog",
     "writing",

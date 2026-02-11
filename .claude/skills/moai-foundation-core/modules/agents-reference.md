@@ -9,7 +9,7 @@ Version: 2.0.0
 
 ## Quick Reference (30 seconds)
 
-Alfred delegates ALL tasks to specialized agents. 26 agents organized in 7 tiers:
+MoAI delegates ALL tasks to specialized agents. 26 agents organized in 7 tiers:
 
 Tier 1: `workflow-*` (Command Processors) - Always Active
 Tier 2: `core-*` (Orchestration & Quality) - Auto-triggered
@@ -39,7 +39,7 @@ All MoAI-ADK agents follow consistent naming:
 
 | Domain | Purpose | Examples |
 |--------|---------|----------|
-| `workflow` | Core workflow command processors | workflow-spec, workflow-tdd |
+| `workflow` | Core workflow command processors | workflow-spec, workflow-ddd |
 | `core` | Orchestration & quality management | core-planner, core-quality |
 | `code` | Code implementation experts | code-backend, code-frontend |
 | `data` | Data-related experts | data-database |
@@ -61,7 +61,7 @@ Core command processors directly bound to MoAI commands.
 |-------|---------|---------|
 | `workflow-project` | `/moai:0-project` | Project initialization and setup |
 | `workflow-spec` | `/moai:1-plan` | EARS SPEC generation and planning |
-| `workflow-tdd` | `/moai:2-run` | TDD RED-GREEN-REFACTOR execution |
+| `workflow-ddd` | `/moai:2-run` | DDD ANALYZE-PRESERVE-IMPROVE execution |
 | `workflow-docs` | `/moai:3-sync` | Documentation generation and synchronization |
 
 Loading: Always active (loaded on command invocation)
@@ -114,7 +114,7 @@ External MCP server integrations with context continuity support.
 | Agent | MCP Server | Purpose |
 |-------|------------|---------|
 | `mcp-context7` | Context7 | Documentation research and API reference |
-| `mcp-figma` | Figma | Design system integration |
+| `mcp-pencil` | Pencil | Design system integration |
 | `mcp-notion` | Notion | Knowledge base integration |
 | `mcp-playwright` | Playwright | Browser automation and E2E testing |
 | `mcp-sequential-thinking` | Sequential-Thinking | Complex reasoning and strategic analysis |
@@ -212,7 +212,7 @@ Is this a new feature or architecture change?
 
 ### Delegation Principles
 
-1. Agent-First: Alfred NEVER executes tasks directly. ALWAYS delegates via Task()
+1. Agent-First: MoAI NEVER executes tasks directly. ALWAYS delegates via Task()
 
 2. Naming Consistency: All agents follow `{domain}-{role}` pattern
  - Lowercase only
@@ -349,7 +349,7 @@ Other Modules:
 Commands:
 - `/moai:0-project` → `workflow-project`
 - `/moai:1-plan` → `workflow-spec`
-- `/moai:2-run` → `workflow-tdd`
+- `/moai:2-run` → `workflow-ddd`
 - `/moai:3-sync` → `workflow-docs`
 
 ---
